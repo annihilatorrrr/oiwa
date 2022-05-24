@@ -123,8 +123,7 @@ async def webhook_handler(request: Request):
 
 @app.get("/setwebhook-f443dc992ba6")
 async def set_webhook():
-    s = bot.set_webhook(url=f"{DOMAIN}/telegram-update-4e1cb6")
-    if s:
+    if s := bot.set_webhook(url=f"{DOMAIN}/telegram-update-4e1cb6"):
         return HTMLResponse("ok")
     else:
         return HTMLResponse("Error!")
